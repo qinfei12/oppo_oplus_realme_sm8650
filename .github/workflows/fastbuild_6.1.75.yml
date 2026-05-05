@@ -584,7 +584,7 @@ jobs:
              echo "CONFIG_CGROUP_PIDS=y" >> ./common/arch/arm64/configs/gki_defconfig
              echo "CONFIG_MEMCG=y" >> ./common/arch/arm64/configs/gki_defconfig
             # 添加 ntsync支持
-             echo "CONFIG NTSYNC=y" >> ./common/arch/arm64/configs/gki_defconfig
+             echo "CONFIG_NTSYNC=y" >> ./common/arch/arm64/configs/gki_defconfig
            
       - name: 构建内核
         run: |

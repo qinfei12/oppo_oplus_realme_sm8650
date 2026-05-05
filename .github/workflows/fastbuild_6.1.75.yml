@@ -414,7 +414,7 @@ jobs:
           cd kernel_workspace
           echo "CONFIG_SYSVIPC=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_SYSVIPC_SYSCTL=y" >> ./common/arch/arm64/configs/gki_defconfig
-          echo "CONFIG_SYSVIPC_COMPAT=y" >> ./common/arm64/configs/gki_defconfig
+          echo "CONFIG_SYSVIPC_COMPAT=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_POSIX_MQUEUE=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_POSIX_MQUEUE_SYSCTL=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_CGROUP_PIDS=y" >> ./common/arch/arm64/configs/gki_defconfig

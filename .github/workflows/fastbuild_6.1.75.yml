@@ -549,12 +549,12 @@ jobs:
         run: |
             cd kernel_workspace/common
             # cd kernel_workspace/common/drivers/kernelsu
-            wget https://github.com/Goldzxcbug/Droidspaces_Kernel_patch/blob/main/OKI/6.1/01.6.1%2B_disable_crc_checks_for_lkms.patch
-            wget https://github.com/Goldzxcbug/Droidspaces_Kernel_patch/blob/main/OKI/6.1/02.fix_restore%20cgroup%20file%20prefix%20handling%20.patch
-            wget https://github.com/Goldzxcbug/Droidspaces_Kernel_patch/blob/main/OKI/6.1/03.5.15%2B_use_android_abi_padding_for_posix_mqueue.patch
-            wget https://github.com/Goldzxcbug/Droidspaces_Kernel_patch/blob/main/OKI/6.1/04.sysvipc_task_struct.patch
-            wget https://github.com/qinfei12/oppo_oplus_realme_sm8650/blob/main/other_patch%2Fntsync_base.patch
-            wget https://github.com/qinfei12/oppo_oplus_realme_sm8650/blob/main/other_patch%2Fntsync_compat_android14-6.1.patch
+            wget https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/OKI/6.1/01.6.1%2B_disable_crc_checks_for_lkms.patch
+            wget https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/OKI/6.1/02.fix_restore%20cgroup%20file%20prefix%20handling%20.patch
+            wget https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/OKI/6.1/03.5.15%2B_use_android_abi_padding_for_posix_mqueue.patch
+            wget https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/OKI/6.1/04.sysvipc_task_struct.patch
+            wget https://raw.githubusercontent.com/qinfei12/oppo_oplus_realme_sm8650/refs/heads/main/other_patch/ntsync_base.patch
+            wget https://raw.githubusercontent.com/qinfei12/oppo_oplus_realme_sm8650/refs/heads/main/other_patch/ntsync_compat_android14-6.1.patch
             
             patch -p1 -N -F 3 < '01.6.1+_disable_crc_checks_for_lkms.patch'
             patch -p1 -N -F 3 < '02.fix_restore cgroup file prefix handling .patch'

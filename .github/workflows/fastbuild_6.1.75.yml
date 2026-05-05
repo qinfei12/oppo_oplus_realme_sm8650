@@ -402,9 +402,9 @@ jobs:
           echo "CONFIG_KSU_SUSFS_SUS_MAP=y" >> ./common/arch/arm64/configs/gki_defconfig
        - name: 开启 Droidspaces & NTSync支持
     run: |
-    cd kernel_workspace/common
-    patch -p1 < ../other_patch/ntsync_base.patch || true
-    patch -p1 < ../other_patch/ntsync_compat_android14-6.1.patch || true
+     cd kernel_workspace/common
+     patch -p1 < ../other_patch/ntsync_base.patch || true
+     patch -p1 < ../other_patch/ntsync_compat_android14-6.1.patch || true
        
           echo "CONFIG_SYSVIPC=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_SYSVIPC_SYSCTL=y" >> ./common/arch/arm64/configs/gki_defconfig
@@ -412,13 +412,13 @@ jobs:
           echo "CONFIG_POSIX_MQUEUE=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_POSIX_MQUEUE_SYSCTL=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_CGROUP_PIDS=y" >> ./common/arch/arm64/configs/gki_defconfig
-         echo "CONFIG_CGROUP_DEVICE=y" >> ./common/arch/arm64/configs/gki_defconfig
-        echo "CONFIG_IPC_NS=y" >> ./common/arch/arm64/configs/gki_defconfig
-        echo "CONFIG_USER_NS=y" >> ./common/arch/arm64/configs/gki_defconfig
-        echo "CONFIG_PID_NS=y" >> ./common/arch/arm64/configs/gki_defconfig
-        echo "CONFIG_DEVTMPFS=y" >> ./common/arch/arm64/configs/gki_defconfig
-        echo "CONFIG_DEVTMPFS_MOUNT=y" >> ./common/arch/arm64/configs/gki_defconfig
-        echo "CONFIG_NTSYNC=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_CGROUP_DEVICE=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_IPC_NS=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_USER_NS=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_PID_NS=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_DEVTMPFS=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_DEVTMPFS_MOUNT=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_NTSYNC=y" >> ./common/arch/arm64/configs/gki_defconfig
 
       - name: 添加 KSU & 其他配置项
         run: |

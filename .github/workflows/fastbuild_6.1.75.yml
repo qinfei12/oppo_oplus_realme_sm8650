@@ -400,7 +400,7 @@ jobs:
           echo "CONFIG_KSU_SUSFS_SPOOF_CMDLINE_OR_BOOTCONFIG=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_KSU_SUSFS_OPEN_REDIRECT=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_KSU_SUSFS_SUS_MAP=y" >> ./common/arch/arm64/configs/gki_defconfig
-      - name: 开启 Droidspaces & NTSync支持
+      - name: NTSync补丁
         run: |
           cd kernel_workspace/common
           # cd kernel_workspace/common/drivers/kernelsu
@@ -408,7 +408,10 @@ jobs:
           wget https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/NTsync/ntsync_compat_android14-6.1.patch
           patch -p1 < 'ntsync_base.patch'
           patch -p1 < 'ntsync_compat_android14-6.1.patch'
-          cd ..
+          
+      - name: 开启Droidspaces支持
+        run: |
+          cd kernel_workspace
           echo "CONFIG_SYSVIPC=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_SYSVIPC_SYSCTL=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_SYSVIPC_COMPAT=y" >> ./common/arm64/configs/gki_defconfig

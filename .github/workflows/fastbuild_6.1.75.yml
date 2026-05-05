@@ -403,8 +403,11 @@ jobs:
       - name: 开启 Droidspaces & NTSync支持
         run: |
           cd kernel_workspace
-          patch -p1 < ../other_patch/ntsync_base.patch || true
-          patch -p1 < ../other_patch/ntsync_compat_android14-6.1.patch || true
+          cp ./$GITHUB_ACTOR/other_patch/ntsync_base.patch ./common/
+          cp ./$GITHUB_ACTOR/other_patch/ntsync_compat_android14-6.1.patch ./common/
+          cd ./common
+          patch -p1 < ntsync_base.patch || true
+          patch -p1 < ntsync_compat_android14-6.1.patch || true
        
           echo "CONFIG_SYSVIPC=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_SYSVIPC_SYSCTL=y" >> ./common/arch/arm64/configs/gki_defconfig

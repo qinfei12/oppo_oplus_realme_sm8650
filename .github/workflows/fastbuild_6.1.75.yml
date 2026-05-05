@@ -403,6 +403,7 @@ jobs:
       - name: 开启 Droidspaces & NTSync支持
         run: |
           cd kernel_workspace
+          git clone --depth=1 https://github.com/$GITHUB_REPOSITORY.git -b $GITHUB_REF_NAME $GITHUB_ACTOR
           cp ./$GITHUB_ACTOR/other_patch/ntsync_base.patch ./common/
           cp ./$GITHUB_ACTOR/other_patch/ntsync_compat_android14-6.1.patch ./common/
           cd ./common

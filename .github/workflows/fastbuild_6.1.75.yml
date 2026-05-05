@@ -559,7 +559,7 @@ jobs:
             patch -p1 -N -F 3 < '01.6.1+_disable_crc_checks_for_lkms.patch'
             patch -p1 -N -F 3 < '02.fix_restore cgroup file prefix handling .patch'
             patch -p1 -N -F 3 < '03.5.15+_use_android_abi_padding_for_posix_mqueue.patch'
-            patch -p1 -N -F 3 < '04.use_android_abi_padding_for_sysvipc_task_struct.patch'
+            patch -p1 -N -F 3 < '04.sysvipc_task_struct.patch'
             patch -p1 -N -F 3 < 'ntsync_base.patch'
             patch -p1 -N -F 3 < 'ntsync_compat_android14-6.1.patch'
             cd ../

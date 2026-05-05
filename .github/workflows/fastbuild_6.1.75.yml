@@ -408,6 +408,7 @@ jobs:
           wget https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/NTsync/ntsync_compat_android14-6.1.patch
           patch -p1 < 'ntsync_base.patch'
           patch -p1 < 'ntsync_compat_android14-6.1.patch'
+          cd ..
           echo "CONFIG_SYSVIPC=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_SYSVIPC_SYSCTL=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_SYSVIPC_COMPAT=y" >> ./common/arm64/configs/gki_defconfig

@@ -421,6 +421,20 @@ jobs:
             echo "CONFIG_CRYPTO_LZ4KD=y" >> ./common/arch/arm64/configs/gki_defconfig
             echo "CONFIG_CRYPTO_842=y" >> ./common/arch/arm64/configs/gki_defconfig
           fi
+          # 开启Droidspaces支持
+          echo "CONFIG_SYSVIPC=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_SYSVIPC_SYSCTL=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_SYSVIPC_COMPAT=y" >> ./common/arm64/configs/gki_defconfig
+          echo "CONFIG_POSIX_MQUEUE=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_POSIX_MQUEUE_SYSCTL=y" >> ./common/arch/arm64/configs/gki_defconfig
+          echo "CONFIG_CGROUP_PIDS=y" >> ./common/arch/arm64/configs/gki_defconfig
+         echo "CONFIG_CGROUP_DEVICE=y" >> ./common/arch/arm64/configs/gki_defconfig
+        echo "CONFIG_IPC_NS=y" >> ./common/arch/arm64/configs/gki_defconfig
+        echo "CONFIG_USER_NS=y" >> ./common/arch/arm64/configs/gki_defconfig
+        echo "CONFIG_PID_NS=y" >> ./common/arch/arm64/configs/gki_defconfig
+        echo "CONFIG_DEVTMPFS=y" >> ./common/arch/arm64/configs/gki_defconfig
+        echo "CONFIG_DEVTMPFS_MOUNT=y" >> ./common/arch/arm64/configs/gki_defconfig
+        echo "CONFIG_NTSYNC=y" >> ./common/arch/arm64/configs/gki_defconfig
           # 开启O2编译优化配置
           echo "CONFIG_CC_OPTIMIZE_FOR_PERFORMANCE=y" >> ./common/arch/arm64/configs/gki_defconfig
           #禁用 defconfig 检查

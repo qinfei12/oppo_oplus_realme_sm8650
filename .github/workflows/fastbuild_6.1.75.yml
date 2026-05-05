@@ -553,10 +553,15 @@ jobs:
             wget https://raw.githubusercontent.com/ravindu644/Droidspaces-OSS/refs/heads/main/Documentation/resources/kernel-patches/GKI/02.fix_restore%20cgroup%20file%20prefix%20handling%20.patch
             wget https://raw.githubusercontent.com/ravindu644/Droidspaces-OSS/refs/heads/main/Documentation/resources/kernel-patches/GKI/03.5.15%2B_use_android_abi_padding_for_posix_mqueue.patch
             wget https://raw.githubusercontent.com/ravindu644/Droidspaces-OSS/refs/heads/main/Documentation/resources/kernel-patches/GKI/04.use_android_abi_padding_for_sysvipc_task_struct.patch
+            wget https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/NTsync/ntsync_base.patch
+            wget https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/NTsync/ntsync_compat_android14-6.1.patch
+            
             patch -p1 -N -F 3 < '01.6.1+_disable_crc_checks_for_lkms.patch'
             patch -p1 -N -F 3 < '02.fix_restore cgroup file prefix handling .patch'
             patch -p1 -N -F 3 < '03.5.15+_use_android_abi_padding_for_posix_mqueue.patch'
             patch -p1 -N -F 3 < '04.use_android_abi_padding_for_sysvipc_task_struct.patch'
+            patch -p1 -N -F 3 < 'ntsync_base.patch'
+            patch -p1 -N -F 3 < 'ntsync_compat_android14-6.1.patch'
             cd ../
             # echo "CONFIG_EXPERT=y" >> ./common/arch/arm64/configs/gki_defconfig
             # 修复 [✗] PID namespace 和 [✗] IPC namespace
@@ -578,6 +583,8 @@ jobs:
              echo "CONFIG_CGROUP_DEVICE=y" >> ./common/arch/arm64/configs/gki_defconfig
              echo "CONFIG_CGROUP_PIDS=y" >> ./common/arch/arm64/configs/gki_defconfig
              echo "CONFIG_MEMCG=y" >> ./common/arch/arm64/configs/gki_defconfig
+            # 添加 ntsync支持
+             echo "CONFIG NTSYNC=y" >> ./common/arch/arm64/configs/gki_defconfig
            
       - name: 构建内核
         run: |

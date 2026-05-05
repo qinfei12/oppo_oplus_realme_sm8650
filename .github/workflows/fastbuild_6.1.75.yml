@@ -402,14 +402,12 @@ jobs:
           echo "CONFIG_KSU_SUSFS_SUS_MAP=y" >> ./common/arch/arm64/configs/gki_defconfig
       - name: 开启 Droidspaces & NTSync支持
         run: |
-          cd kernel_workspace
-          git clone --depth=1 https://github.com/$GITHUB_REPOSITORY.git -b $GITHUB_REF_NAME $GITHUB_ACTOR
-          cp ./$GITHUB_ACTOR/other_patch/ntsync_base.patch ./common/
-          cp ./$GITHUB_ACTOR/other_patch/ntsync_compat_android14-6.1.patch ./common/
-          cd ./common
-          patch -p1 < ntsync_base.patch || true
-          patch -p1 < ntsync_compat_android14-6.1.patch || true
-       
+          cd kernel_workspace/common
+          # cd kernel_workspace/common/drivers/kernelsu
+          wget https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/NTsync/ntsync_base.patch
+          wget https://raw.githubusercontent.com/Goldzxcbug/Droidspaces_Kernel_patch/refs/heads/main/NTsync/ntsync_compat_android14-6.1.patch
+          patch -p1 < 'ntsync_base.patch'
+          patch -p1 < 'ntsync_compat_android14-6.1.patch'
           echo "CONFIG_SYSVIPC=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_SYSVIPC_SYSCTL=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_SYSVIPC_COMPAT=y" >> ./common/arm64/configs/gki_defconfig
